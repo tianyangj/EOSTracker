@@ -1,0 +1,11 @@
+header {
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand img {
+    width: 30px;
+}

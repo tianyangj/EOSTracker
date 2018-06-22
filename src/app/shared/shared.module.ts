@@ -5,6 +5,13 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { PrettyJsonModule } from 'angular2-prettyjson';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+
+import { MasterpageComponent } from './masterpage/masterpage.component';
+import { HeaderComponent } from './masterpage/header/header.component';
+import { SidenavComponent } from './masterpage/sidenav/sidenav.component';
 import { PageComponent } from './page/page.component';
 import { LoadingComponent } from './page/loading/loading.component';
 import { NavbarComponent } from './page/navbar/navbar.component';
@@ -20,7 +27,16 @@ const sharedModules = [
   PrettyJsonModule
 ];
 
+const sharedMaterialModules = [
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule
+];
+
 const sharedComponents = [
+  MasterpageComponent,
+  HeaderComponent,
+  SidenavComponent,
   PageComponent,
   LoadingComponent,
   NavbarComponent,
@@ -33,7 +49,8 @@ const sharedPipes = [
 
 @NgModule({
   imports: [
-    ...sharedModules
+    ...sharedModules,
+    ...sharedMaterialModules
   ],
   declarations: [
     ...sharedComponents,
@@ -41,6 +58,7 @@ const sharedPipes = [
   ],
   exports: [
     ...sharedModules,
+    ...sharedMaterialModules,
     ...sharedComponents,
     ...sharedPipes
   ]
