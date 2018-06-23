@@ -1,5 +1,5 @@
 <div *ngIf="dataSource; else loading">
-  <div *ngIf="(page$ | async) as page">
+  <div *ngIf="(page$ | async) as page" style="display:block;text-align:right;">
     <button mat-icon-button [disabled]="page <= 1" (click)="previous(page)">
       <mat-icon>navigate_before</mat-icon>
     </button>

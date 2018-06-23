@@ -1,9 +1,11 @@
 <app-page>
-  <div id="page-wrapper">
+  <div id="page-wrapper" style="padding:0;">
     <mat-toolbar>
-      <h1 class="mat-headline">{{ 'Actions' | translate }}</h1>
+      <h1 class="mat-headline">
+        <a routerLink=".">{{ 'Actions' | translate }}</a>
+      </h1>
     </mat-toolbar>
-    <app-table [dataSource]="actions$ | async">
+    <app-table [dataSource]="actions$ | async" style="display:block;padding:20px;">
       <mat-table [dataSource]="actions$ | async" class="mat-elevation-z2">
         <mat-header-row *matHeaderRowDef="columnHeaders"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnHeaders;"></mat-row>
@@ -15,7 +17,7 @@
         </ng-container>
         <ng-container matColumnDef="transactionId">
           <mat-header-cell *matHeaderCellDef>{{ 'TransactionId' | translate }}</mat-header-cell>
-          <mat-cell *matCellDef="let action">
+          <mat-cell *matCellDef="let action" class="truncate">
             <a [routerLink]="['/transactions',action.transaction]">{{action.transaction}}</a>
           </mat-cell>
         </ng-container>
