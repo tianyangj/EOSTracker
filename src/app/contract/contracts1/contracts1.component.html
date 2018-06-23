@@ -10,8 +10,8 @@
         <mat-header-row *matHeaderRowDef="columnHeaders"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnHeaders;"></mat-row>
         <ng-container matColumnDef="actionId">
-          <mat-header-cell *matHeaderCellDef>{{ 'ActionId' | translate }}</mat-header-cell>
-          <mat-cell *matCellDef="let action">
+          <mat-header-cell fxFlex="80px"  *matHeaderCellDef>{{ 'ActionId' | translate }}</mat-header-cell>
+          <mat-cell fxFlex="80px"  *matCellDef="let action">
             <a [routerLink]="['/actions',action.id]">{{action.id}}</a>
           </mat-cell>
         </ng-container>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 import { PrettyJsonModule } from 'angular2-prettyjson';
 
@@ -27,6 +28,7 @@ const sharedModules = [
   CommonModule,
   FormsModule,
   RouterModule,
+  FlexLayoutModule,
   TranslateModule,
   PrettyJsonModule
 ];
