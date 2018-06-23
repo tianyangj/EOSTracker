@@ -283,3 +283,9 @@ table.dataTable thead .sorting:after {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
