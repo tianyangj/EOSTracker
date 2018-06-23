@@ -3,6 +3,7 @@
     <mat-toolbar>
       <h1 class="mat-headline">{{ 'Actions' | translate }}</h1>
     </mat-toolbar>
+    <mat-paginator [length]="total" [pageSize]="30"></mat-paginator>
     <mat-table [dataSource]="actions$ | async" class="mat-elevation-z2">
       <mat-header-row *matHeaderRowDef="columnHeaders"></mat-header-row>
       <mat-row *matRowDef="let row; columns: columnHeaders;"></mat-row>

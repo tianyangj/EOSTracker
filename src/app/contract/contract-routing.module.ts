@@ -10,7 +10,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: ContractsComponent
-    //component: Contracts1Component
+  },
+  {
+    path: 'v1',
+    component: Contracts1Component
   },
   {
     path: ':id',

@@ -20,6 +20,7 @@ export class Contracts1Component implements OnInit {
     'name'
   ];
   actions$: Observable<Action[]>;
+  total: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,8 +29,13 @@ export class Contracts1Component implements OnInit {
 
   ngOnInit() {
     this.actions$ = this.route.queryParams.pipe(
-      switchMap(params => this.actionService.getActions()),
-      tap(actions => console.log(actions))
+      switchMap(params => this.actionService.getActions(params.page || 1)),
+      tap(actions => {
+        console.log(actions);
+        if (actions[0]) {
+          this.total = actions[0].id;
+        }
+      })
     );
   }
 
