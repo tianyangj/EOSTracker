@@ -8,6 +8,7 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MasterpageComponent } from './masterpage/masterpage.component';
 import { HeaderComponent } from './masterpage/header/header.component';
@@ -30,7 +31,8 @@ const sharedModules = [
 const sharedMaterialModules = [
   MatSidenavModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatToolbarModule
 ];
 
 const sharedComponents = [
