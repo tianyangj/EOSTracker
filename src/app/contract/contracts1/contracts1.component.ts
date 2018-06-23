@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ActionService } from '../../services/action.service';
 import { Action } from '../../models/action';
 import { Observable } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap, map, share } from 'rxjs/operators';
 
 @Component({
   templateUrl: './contracts1.component.html',
@@ -20,7 +20,6 @@ export class Contracts1Component implements OnInit {
     'name'
   ];
   actions$: Observable<Action[]>;
-  total: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,13 +28,9 @@ export class Contracts1Component implements OnInit {
 
   ngOnInit() {
     this.actions$ = this.route.queryParams.pipe(
-      switchMap(params => this.actionService.getActions(params.page || 1)),
-      tap(actions => {
-        console.log(actions);
-        if (actions[0]) {
-          this.total = actions[0].id;
-        }
-      })
+      map(queryParams => queryParams.page ? Number(queryParams.page) : 1),
+      switchMap(page => this.actionService.getActions(page)),
+      share()
     );
   }
 

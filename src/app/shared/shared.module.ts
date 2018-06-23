@@ -9,6 +9,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MasterpageComponent } from './masterpage/masterpage.component';
 import { HeaderComponent } from './masterpage/header/header.component';
@@ -17,6 +19,7 @@ import { PageComponent } from './page/page.component';
 import { LoadingComponent } from './page/loading/loading.component';
 import { NavbarComponent } from './page/navbar/navbar.component';
 import { SidebarComponent } from './page/sidebar/sidebar.component';
+import { TableComponent } from './table/table.component';
 
 import { ToKbPipes } from './pipes/tokb.pipes';
 
@@ -32,7 +35,9 @@ const sharedMaterialModules = [
   MatSidenavModule,
   MatListModule,
   MatIconModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatButtonModule,
+  MatProgressSpinnerModule
 ];
 
 const sharedComponents = [
@@ -42,7 +47,8 @@ const sharedComponents = [
   PageComponent,
   LoadingComponent,
   NavbarComponent,
-  SidebarComponent
+  SidebarComponent,
+  TableComponent
 ];
 
 const sharedPipes = [
