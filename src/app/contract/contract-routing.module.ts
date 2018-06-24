@@ -16,10 +16,6 @@ const routes: Routes = [
     component: Contracts1Component
   },
   {
-    path: 'v1',
-    component: Contracts1Component
-  },
-  {
     path: ':id',
     component: ContractComponent
   }
